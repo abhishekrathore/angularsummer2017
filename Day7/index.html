@@ -1,0 +1,37 @@
+<html >
+    <head >
+        <link rel="stylesheet" href="style.css">
+        <script src="angular.js"></script>
+
+    </head>
+    <body ng-app>
+
+  Input : <input type="text" ng-model="name"/>
+    <!--Style : <input type="text" ng-model="style"/>-->
+    <br>
+    <button ng-click="style='style1'">Tab1</button>
+    <button ng-click="style='style2'">Tab2</button>
+
+
+         <div class="{{style}}">
+            hello {{name}}
+         </div>
+         <h1 ng-if="name=='xyz'">{{name}}</h1>
+         <img src="{{name}}">
+
+    <p ng-repeat="elem in ['A','B','C']">{{elem}}</p>
+
+
+
+
+       <!--Input : <input id="input1" value="hi" type="text" onkeyup="getValue()">
+       <button onclick="getValue()">Click</button>
+        <div id="text1" class="style1">
+            hello
+        </div>
+        
+
+    <script src="app.js"></script>-->
+
+    </body>
+</html>
