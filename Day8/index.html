@@ -1,0 +1,37 @@
+<html>
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    <body ng-app="firstApp">
+      
+      <div ng-controller="loginCtrl as login">
+          <input type="text" ng-model="login.name">
+          <button ng-click="login.changeName()">Change Name</button>
+      
+       Name :{{login.name}}
+       Age : {{login.age}}
+       Subject : {{login.subject}}
+
+      </div>
+      <div ng-controller="signupCtrl as signup">
+        Name :{{signup.name}}
+       Age : {{signup.age}}
+       Subject : {{signup.subject}}
+
+     <button ng-click="signup.changeName()">Change Name</button>
+
+
+        <div ng-controller="loginCtrl as login1">
+            
+            {{signup.name}} ||||  {{login1.name}}
+        </div>      
+
+      </div>
+
+
+   
+ 
+    </body>
+</html>
