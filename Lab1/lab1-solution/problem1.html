@@ -1,0 +1,110 @@
+<html>
+<title>Title Here</title>
+<body>
+	<script>
+			function problem1(){
+				var word1="GAGCCTACTAACGGGAT";
+			    var word2="CATCGTAATGACGGCCT";
+				var wor1=word1.split("");
+			    var wor2=word2.split("");
+				var count=0;
+				var wordDiff=[];
+				
+				for(var i=0;i<=wor1.length;i++)
+				{
+					if(wor1[i]!=wor2[i])
+					{
+						count++;
+						wordDiff.push(wor1[i]);
+						console.log(wor1[i]+":"+wor2[i]);
+					}
+				}
+				
+				console.log("Total: "+(count));
+			}
+
+
+			function problem2(){
+				var str="The quick brown fox jumps over the lazy dog";
+				var alphabet="abcdefghijkmnoqrstuvwxyz";
+				var alphabet=alphabet.split("");
+				var flag=0;
+				
+				for(var i=0;i<alphabet.length;i++)
+					{
+						if(!str.match(alphabet[i]))
+						{
+								flag=1;
+								break;
+						}
+					}
+			
+				if(flag==0)
+				 	console.log("Your string is pangram");
+				else 
+					console.log("your string is not pangram");
+				}
+
+
+			function problem3(str){
+				
+				var str=str.toLowerCase();
+				var string =str.split("");
+				var flag=0;
+			
+				for(var i=0;i<string.length;i++)
+				{
+					for(var j=0;j<=string.length;j++)
+					{
+						if(string[i]==string[j]&&(i!=j)){flag=1;}
+					}
+				}
+				
+				if(flag==1){console.log(str+ " is not an isogram")}else 
+				{
+					console.log(str+ " is an isogram");
+				}
+			}
+
+			function problem4(){
+				var str="Brazil Russia India China SouthAfrica";
+				var string =str.split(" ");
+				
+				var abb="";
+				for(var i=0;i<string.length;i++)
+				{
+					var temp=string[i].split("").shift();
+						abb+=temp;
+				}
+				console.log(abb);
+			}
+
+			function problem5(){
+				var array=[1,[2,3,null,4],[null],5];
+				var finalArray=[];
+				returnElem(array);
+	
+				function returnElem(array)
+				{
+				var arr=[];
+				for(var i=0;i<array.length;i++)
+				{
+					if(Array.isArray(array[i]))
+					{
+						returnElem(array[i]);
+					}
+					else 
+						{
+							if(array[i]){finalArray.push(array[i])}; 
+						} 
+				}
+				}
+				console.log("final array: ",finalArray);
+
+
+			}
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<html>
+<title>problem 6</title>
+<body>
+	
+	
+	<div>
+	<p id="timeDisplay"></p>
+	</div>
+	
+	<script>
+
+     function timer(){
+     	 var time = new Date();
+	document.getElementById("timeDisplay").innerText = time.getHours()+":"+time.getMinutes()+":"+time.getSeconds();
+     }
+   
+     setInterval(timer,1000)
+
+
+	</script>
+</body>
+</html>
