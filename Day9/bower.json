@@ -1,0 +1,21 @@
+{
+  "name": "flaggame",
+  "homepage": "https://github.com/abhishekrathore/angularsummer2017",
+  "authors": [
+    "Abhishek Rathore <rathore.abhishek87@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "flag-icon-css": "^2.8.0"
+  }
+}
