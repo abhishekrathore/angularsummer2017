@@ -1,0 +1,20 @@
+{
+  "name": "design",
+  "homepage": "https://github.com/abhishekrathore/angularsummer2017",
+  "authors": [
+    "Abhishek Rathore <rathore.abhishek87@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
