@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.css">
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    <body ng-app="todo">
+      
+      <div ng-controller="todoCtrl as todo">
+       
+        <div class="row">
+            <div class="col-xs-6">
+                <input type="text" class="form-control" ng-model="todo.task" ng-keypress="$event.keyCode==13 && todo.add(todo.task)">
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-primary btn-block" ng-click="todo.add(todo.task)">Add Task</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                <ul  class="list-group">
+                    <li class="list-group-item list-group-item-danger" ng-repeat="task in todo.tasks">
+                       {{$index+1}}. {{task}} <button class="btn btn-danger" ng-click="todo.delete($index)">Delete</button></li>
+                 
+                </ul>
+            </div>
+        </div>
+ 
+
+
+
+     </div>
+
+
+   
+ 
+    </body>
+</html>
