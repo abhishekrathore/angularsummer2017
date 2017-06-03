@@ -29,7 +29,9 @@
 11. There will be a gap of 3 seconds in between next random location.
 12. With every increasing level Pickachu and other will appear for lesser time. As a rule time will be  
 
-```[2000 - (level-1)*200] milisecs.
+```
+[2000 - (level-1)*200] milisecs.
+
 ```
 
 13. Show the Level, Total Points at top of game board.
