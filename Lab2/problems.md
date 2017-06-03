@@ -1,6 +1,6 @@
 ## Tic-Tac-Toe
 
->	Create a Tic-Tac-Toe layout in bootstrap. You will have to create 3 x 3 grid.You should use 'row' and 'col' structure of bootstrap. 
+>	Create a Tic-Tac-Toe game with layout in bootstrap. You will have to create 3 x 3 grid. You should use 'row' and 'col' structure of bootstrap. 
 
 #### Game Rules
 1. First player will be marking cross (X)
@@ -13,7 +13,7 @@
 
 ## PokeMon
 
-> PokeMon require your help. Save them by picking the right ones. There are some good characters and there are the bad ones. Create a 8x8 Div to make a gameboard.
+> PokeMon requires your help. Save them by picking the right ones. There are some good characters and there are the bad ones. Create a 8x8 Div to make a gameboard.
 
 #### Game Rules
 1. Pikachu should appear at random places.
