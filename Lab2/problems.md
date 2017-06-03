@@ -39,6 +39,7 @@
 ###### Enhancements :
 1. You can use multiple images of good and bad guys to make it complex
 2. make some animation effects using CSS.
+3. You can increase the grid size from 8 x 8 to N x N with each level. Where N is +1 previous value of N.
 
 [Pikachu](https://www.hunted.com/blog/wp-content/uploads/2016/07/Pikachu.png)
 [Giovanni](http://cdn.bulbagarden.net/upload/thumb/0/0b/FireRed_LeafGreen_Giovanni.png/150px-FireRed_LeafGreen_Giovanni.png)
