@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    <body ng-app="services">
+
+
+  <div ng-controller="secondCtrl as second">
+             <input type="text" ng-model="second.name" >
+            {{second.name}}
+            {{person.name}}
+            {{second.person}}
+            
+        </div>
+
+        <div ng-controller="firstCtrl as first">
+            <input type="text" ng-model="first.name" >
+             {{first.name}}
+             {{first.person}}
+        </div>
+
+      
+   
+    </body>
+</html>
