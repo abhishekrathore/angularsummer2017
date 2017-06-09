@@ -1,0 +1,21 @@
+{
+  "name": "firebaseapp",
+  "homepage": "https://github.com/abhishekrathore/angularsummer2017",
+  "authors": [
+    "Abhishek Rathore <rathore.abhishek87@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "firebase": "^4.1.2",
+    "angularfire": "^2.3.0"
+  }
+}
