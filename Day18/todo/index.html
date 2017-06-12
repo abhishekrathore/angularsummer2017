@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.css">
+        <script src="angular.js"></script>
+        <script src="angular-route.js"></script>
+        <script src="app.js"></script>
+        <script src="firebase.js"></script>
+
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDK6R44NAemegMSsxqmww744ZMNURoMHBY",
+    authDomain: "todoapp-ed98d.firebaseapp.com",
+    databaseURL: "https://todoapp-ed98d.firebaseio.com",
+    projectId: "todoapp-ed98d",
+    storageBucket: "todoapp-ed98d.appspot.com",
+    messagingSenderId: "695902922088"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="angularfire.js"></script>
+
+        <style>
+        .done{
+            text-decoration: line-through;
+        }
+        </style>
+
+    </head>
+    <body ng-app="todo">
+      
+      <ng-view>
+          
+      </ng-view>
+
+
+   
+ 
+    </body>
+</html>

@@ -1,0 +1,40 @@
+<div ng-controller="todoCtrl as todo">
+       
+       <a href="#!/home">Home</a>
+        <div class="row">
+            <div class="col-xs-6">
+                <input type="text" class="form-control" ng-model="todo.task" ng-keypress="$event.keyCode==13 && todo.add(todo.task)">
+            </div>
+            <div ng-if="!todo.editMode" class="col-xs-3">
+                <button class="btn btn-primary btn-block" ng-click="todo.task && todo.add(todo.task)">Add Task</button>
+            </div>
+            <div ng-if ="todo.editMode" class="col-xs-3">
+                <button class="btn btn-warning btn-block" ng-click="todo.update(todo.task)">Update Task</button>
+            </div>
+              <div class="col-xs-3">
+                     <input type="text" ng-model="todo.search.name">
+
+            </div>
+      
+        </div>
+
+        <div class="row">
+            <div class="col-xs-12">
+                 <p>  Task = {{todo.completed}}/{{todo.tasks.length}}</p>
+                  {{todo.search}}
+                <ul  class="list-group">
+                    <li class="list-group-item" ng-class="{'list-group-item-success':task.status,'list-group-item-danger':!task.status}" ng-repeat="task in todo.tasks | filter:todo.search: todo.customComparator | orderBy:'name':true ">
+                     <span ng-class="{'done':task.status}">{{task.name}} </span> <button class="btn btn-danger" ng-click="todo.delete($index)">Delete</button>
+                 <button class="btn" ng-class="{'btn-success':!task.status,'btn-warning':task.status}" ng-click="todo.changeStatus($index)">{{task.status?'Undo':'Done'}}</button>
+                 <button class="btn btn-info" ng-click="todo.edit($index)">Edit</button>
+                  <span>{{task.created_at | date :'dd MMM yyyy'}}</span>
+
+                 </li>
+                </ul>
+            </div>
+        </div>
+ 
+
+
+
+     </div>
