@@ -1,0 +1,13 @@
+<h1>Todo Lists</h1>
+
+
+<div ng-controller="homeCtrl as home">
+
+<input type="text" ng-model="home.list">
+<button ng-click="home.addList(home.list)">Add New List</button> 
+
+<div ng-repeat = "list in home.lists">
+<a  href="#!/list/{{list.title}}">{{list.title | uppercase}} List</a>
+</div>
+
+</div>
