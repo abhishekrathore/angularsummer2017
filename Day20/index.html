@@ -1,0 +1,57 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="bootstrap.css">
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <script src="firebase.js"></script>
+
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDK6R44NAemegMSsxqmww744ZMNURoMHBY",
+    authDomain: "todoapp-ed98d.firebaseapp.com",
+    databaseURL: "https://todoapp-ed98d.firebaseio.com",
+    projectId: "todoapp-ed98d",
+    storageBucket: "todoapp-ed98d.appspot.com",
+    messagingSenderId: "695902922088"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="angularfire.js"></script>
+
+        <style>
+        .done{
+            text-decoration: line-through;
+        }
+        </style>
+
+    </head>
+    <body ng-app="todo">
+      
+    <div ng-controller="todoCtrl as todo">
+
+
+
+
+   <div class="row">
+       <div class="col-xs-1">
+        <img class="img-responsive img-circle" src="{{todo.user.img}}" alt="">
+       </div>
+       <div class="col-xs-3">
+            {{todo.user.name}}
+       </div>
+       
+   
+      
+   </div>
+
+   <button class="btn btn-danger" ng-click=todo.google()>Log In with Google</button>
+   <button class="btn btn-info" ng-click=todo.facebook()>Log In with Facebook</button>
+
+
+    </div>
+
+   
+ 
+    </body>
+</html>
