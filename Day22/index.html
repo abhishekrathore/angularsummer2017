@@ -1,0 +1,28 @@
+<html ng-app="restapi">
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+    </body>
+    <div ng-controller="personCtrl as person">
+
+<!--<h1>
+  {{person.data.results[0].name.title}}. 
+{{person.data.results[0].name.first}}  {{person.data.results[0].name.last}}</h1>
+<img ng-src="{{person.data.results[0].picture.medium}}">-->
+<input type="text" ng-model="person.text">
+<button ng-click="person.search()">Search</button>
+
+<div ng-repeat="superhero in person.superheros">
+    {{superhero.name}} 
+    <img style="width:200px;height:200px" ng-src="{{superhero.thumbnail.path}}.{{superhero.thumbnail.extension}}"
+</div>
+
+
+
+
+    </div>
+
+  
+</html>
