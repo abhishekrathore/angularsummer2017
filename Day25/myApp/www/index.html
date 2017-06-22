@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-app="starter">
+
+
+      <!--<ion-footer-bar class="bar-dark">
+        <h1 class="title">Submit</h1>
+      </ion-footer-bar>-->
+     <ion-tabs class="tabs-positive tabs-icon-top">
+
+  <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+         <ion-pane ng-controller="listCtrl as list">
+      <ion-header-bar class="bar-balanced">
+        <button class="button icon-left ion-planet button-clear"></button>
+        <h1 class="title">Whatsapp</h1>
+        <button class="button icon-right ion-wifi button-clear"></button>
+      </ion-header-bar>
+      <ion-content>
+        <ion-list>
+        <ion-item show-delete="list.show">
+          <ion-delete-button class="ion-minus-circled">hi</ion-delete-button>
+          Hello, list item!
+            <ion-option-button class="button-positive">
+             Edit
+           </ion-option-button>
+        </ion-item>
+        <ion-checkbox ng-model="isChecked">Checkbox Label</ion-checkbox>
+            <div class="list">
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">First Name</span>
+    <input type="text" placeholder="John">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Last Name</span>
+    <input type="text" placeholder="Suhr">
+  </label>
+  <label class="item item-input item-stacked-label">
+    <span class="input-label">Email</span>
+    <input type="text" placeholder="john@suhr.com">
+  </label>
+</div>
+        </ion-list>
+
+
+      </ion-content>
+         </ion-pane>
+  </ion-tab>
+
+  <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+          <ion-content>
+          <h1> hello2 </h1>
+          </ion-content>
+
+  </ion-tab>
+
+  <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+          <h1> hello3 </h1>
+
+  </ion-tab>
+
+</ion-tabs>
+  
+  </body>
+</html>
