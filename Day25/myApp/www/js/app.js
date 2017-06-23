@@ -21,23 +21,33 @@ angular.module('starter', ['ionic'])
       StatusBar.styleDefault();
     }
   });
-}).controller("listCtrl",listCtrl)
+}).config(function($stateProvider, $urlRouterProvider) {
 
-function listCtrl(){
-    var list = this;
+  // Ionic uses AngularUI Router which uses the concept of states
+  // Learn more here: https://github.com/angular-ui/ui-router
+  // Set up the various states which the app can be in.
+  // Each state's controller can be found in controllers.js
+  $stateProvider
 
-    list.items = [
-      { name :"Spider",
-        text : "Make some web",
-        url :"spider.jpg"
-      },
-       { name :"Superman",
-        text : "be strong",
-        url :"super.jpg"
-      }
-    ]
+  // setup an abstract state for the tabs directive
+    .state('home', {
+    url: '/home',
+    templateUrl: 'templates/home.html'
+  }).state('about', {
+    url: '/about',
+    templateUrl: 'templates/about.html'
+  }).state('about.me', {
+    url: '/me',
+    templateUrl: 'templates/me.html'
+  }).state('about.company', {
+    url: '/company',
+    templateUrl: 'templates/company.html'
+  })
 
-    list.show= true
+  // if none of the above states are matched, use this as the fallback
+  $urlRouterProvider.otherwise('/home');
+
+});
 
 
-}
+
