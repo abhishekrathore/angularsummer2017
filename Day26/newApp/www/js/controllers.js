@@ -55,31 +55,103 @@ angular.module('starter.controllers', [])
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
-.controller('browseCtrl', function($scope, $stateParams,$ionicPopup) {
+.controller('browseCtrl', function($scope,$cordovaCamera,$cordovaGeolocation,$cordovaLaunchNavigator, $cordovaFlashlight,$stateParams,$ionicPopup) {
     var browse = this;
-    browse.popup = function(){
-      var myPopUp = $ionicPopup.show({
-         title: 'Enter Wi-Fi Password',
-         subTitle: 'Please use normal things',
-         buttons: [
-      { text: 'Cancel' },
-      {
-        text: '<b>Save</b>',
-        type: 'button-positive',
-        onTap: function(e) {
-          if (!$scope.data.wifi) {
-            //don't allow the user to close unless he enters wifi password
-            e.preventDefault();
-          } else {
-            return $scope.data.wifi;
-          }
-        }
-      }]
 
-       });
+  //   browse.popup = function(){
+
+  // $cordovaFlashlight.switchOn()
+  //   .then(
+  //     function (success) { console.log("on") },
+  //     function (error) { /* error */ });
+  //   }
+
+  var posOptions = {timeout: 10000, enableHighAccuracy: false};
+  
+      // browse.popup = function(){
+
+      //     $cordovaGeolocation
+      //       .getCurrentPosition(posOptions)
+      //       .then(function (position) {
+      //         var lat  = position.coords.latitude
+      //         var long = position.coords.longitude
+      //         console.log(lat,long);
+      //       }, function(err) {
+      //         console.log(err)
+      //       });
+
+      // }
+
+
+  //   browse.popup = function() {
+  //   var destination = [26.854528, 75.8131853];
+	// var start = "Jaipur";
+  //   $cordovaLaunchNavigator.navigate(destination, start).then(function() {
+  //     console.log("Navigator launched");
+  //   }, function (err) {
+  //     console.error(err);
+  //   });
+  // };
+
+
+
+
+  browse.popup = function(){
+
+  document.addEventListener("deviceready", function () {
+
+       var options = {
+      quality: 50,
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 100,
+      targetHeight: 100,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false,
+	  correctOrientation:true
+    };
+
+    $cordovaCamera.getPicture(options).then(function(imageData) {
+      var image = document.getElementById('myImage');
+      image.src = "data:image/jpeg;base64," + imageData;
+    }, function(err) {
+      console.log(err);
+    });
+
+  }, false);
+
+  }
+
+
+
+
+
+
+    // browse.popup = function(){
+    //   var myPopUp = $ionicPopup.show({
+    //      title: 'Enter Wi-Fi Password',
+    //      subTitle: 'Please use normal things',
+    //      buttons: [
+    //   { text: 'Cancel' },
+    //   {
+    //     text: '<b>Save</b>',
+    //     type: 'button-positive',
+    //     onTap: function(e) {
+    //       if (!$scope.data.wifi) {
+    //         //don't allow the user to close unless he enters wifi password
+    //         e.preventDefault();
+    //       } else {
+    //         return $scope.data.wifi;
+    //       }
+    //     }
+    //   }]
+
+    //    });
 
             
-    }
+    // }
 
 
 });
