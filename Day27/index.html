@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+
+    <style>
+    input.ng-valid{
+        border:1px solid green;
+    }
+    
+    </style>
+
+
+    </head>
+    <body ng-app="forms">
+ 
+  <div>
+
+  <form name="form1" ng-controller="firstCtrl as first" ng-submit="form1.$valid && first.submit()" novalidate>
+    <input name="firstname" type="text" ng-model="first.name" required>
+    <input name="email" type="email" ng-model="first.email" required ng-readonly="form1.$submitted">
+    <p ng-show="form1.email.$dirty && form1.email.$error.email && form1.$submitted">Email format not correct</p>
+    <p ng-show="form1.email.$dirty && form1.email.$error.required && form1.$submitted">Email is required</p>
+
+    <input name="age" type="number" ng-model="first.age" required>
+
+    <input type="submit" ng-click="first.check(form1)" >
+    </form>
+  </div>
+  
+
+      
+   
+    </body>
+</html>
