@@ -1,0 +1,25 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{chat.name}}">
+  <ion-content class="padding">
+    <div class="text-center">
+    <img ng-src="{{chat.face}}" style="width: 64px; height: 64px; border-radius: 50px">
+    </div>
+    <h3 class="text-center">{{chat.name}}</h3>
+      <p class="text-center">
+      {{chat.lastText}}
+    </p>
+
+  </ion-content>
+  <ion-footer-bar style="border-top:2px solid lightgrey; border-bottom:2px solid lightgrey; padding:0">
+        <textarea type="text" placeholder="Send a message...." class="item-input col-90 chatbox" auto-focus>
+      </textarea>
+    <button type="button" class="button button-icon icon ion-android-send otb-pink padding-0" ng-click="chat.sendMessage()">
+    </button>
+  </ion-footer-bar>
+
+</ion-view>

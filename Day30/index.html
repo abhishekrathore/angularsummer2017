@@ -1,0 +1,42 @@
+<html>
+<head>
+<script src="bower_components/firebase/firebase.js"></script>
+
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDK6R44NAemegMSsxqmww744ZMNURoMHBY",
+    authDomain: "todoapp-ed98d.firebaseapp.com",
+    databaseURL: "https://todoapp-ed98d.firebaseio.com",
+    projectId: "todoapp-ed98d",
+    storageBucket: "todoapp-ed98d.appspot.com",
+    messagingSenderId: "695902922088"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angularfire/dist/angularfire.js"></script>
+<script src="app.js"></script>
+</head>
+<body ng-app="firebaseapp">
+    
+<div ng-controller="dataCtrl as data">
+
+ <input type="text" ng-model="data.student.name">
+  <input type="text" ng-model="data.student.age">
+ 
+  <form name="fileform" ng-submit="data.upload()">
+  <input type="file" name="file" id="file">
+  <input type="submit" value="Upload">
+  </form>
+  <img ng-src="{{data.url}}" alt="">
+
+  <button ng-click="data.add(data.student)">Add Student</button>
+
+    <div ng-repeat="student in data.students">
+          {{student.name}} : {{student.age}}
+    </div>
+</div>
+
+</body>
+</html>

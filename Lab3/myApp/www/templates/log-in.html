@@ -1,0 +1,34 @@
+<ion-view style="margin-top: 30%" hide-nav-bar="true">
+    <ion-content class="login-page" scroll="false">
+        <div class="valign-parent full-width" ng-style="login.upper">
+            <div class="valign-child">
+                <div class="app-icon">
+                    <img src="img/rocket.png" alt="">
+                </div>
+                <div class='row'>
+                    <div class='col text-center roboto-medium assertive text-xx-large text-shadow'>
+                        The Chating App
+                    </div>
+                </div>
+                <div class='row'>
+    <div class='col text-center roboto-regular text-medium light text-shadow'>
+        Awesome App for Chating
+    </div>
+                </div>
+            </div>
+        </div>
+        <div ng-style="login.lower" class="valign-parent full-width">
+            <div class="valign-child">
+                <div class="row div-centered-80 margin-top-5 padding-top-5">
+                    <div class="col">
+                        <button class="button button-block button-facebook icon-left ion-social-facebook waves-effect waves-light z-depth-2 margin-0" ng-click="login.goChat()">
+                            Connect with Facebook
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p class="text-center" ng-click="login.loginmenu()"> Skip Log In</p>
+    </ion-content>
+</ion-view>

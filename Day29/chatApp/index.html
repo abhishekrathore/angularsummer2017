@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+        div{
+            /*border :1px solid #ccc;*/
+
+        }
+        .sections{
+           padding:10px;
+        }
+        .left{
+            text-align:left;
+        }
+        .right{
+            text-align: right;
+        }
+        .customborder{
+            border-radius:10px;
+            /*box-shadow:-10px -10px 20px 2px;*/
+        }
+        .chatarea{
+            height:450px;
+            padding-top: 5px;
+        }
+        .userlist{
+            background: #CCC;
+        }
+        .center{
+            text-align:center;
+        }
+        .medium-font{
+            font-size:12px;
+            font-weight: bold;
+        }
+        .friend-list-div{
+            height:250px;
+            overflow:scroll;
+        }
+        .friend-list{
+        }
+        .dp{
+            max-width: 50%;
+        }
+        .auto{
+            margin: auto;
+        }
+        .chat-messages{
+            background: white;
+            overflow: scroll;
+        }
+        .chat-input{
+
+            position: absolute;
+            bottom: 0;
+            left:0;
+            width:75%;
+            margin-left:25%;
+            padding: 20px;
+            background: #999;
+
+        }
+        .chat-left{
+            text-align: left;
+        }
+
+        .chat-right{
+            text-align: right;
+            clear: both;
+
+
+        }
+        .chat-right .chat-content{
+             background: lightgreen;
+
+        }
+
+        .chat-left .chat-content{
+            background: orangered;
+            color:white;
+        }
+
+        .chat-content{
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .thumb{
+            width:50px;
+            border-radius: 50%;
+        }
+        .chat-left .user-chat-pic{
+            text-align: right;
+            padding: 0;
+        }
+        .chat-right .user-chat-pic{
+            text-align: left;
+            padding: 0;
+        }
+    </style>
+</head>
+<body class="container" ng-app="test">
+
+<div class="row">
+    <div class="col-xs-3 sections userlist">
+        <div class="center">
+            <img class="dp customborder" src="avatar.jpeg">
+        </div>
+        <div class="sections center medium-font">
+            Abhishek Rathore
+        </div>
+        <div class="friend-list-div">
+            <ul class="list-group friend-list">
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+            </ul>
+
+        </div>
+        <div class="center">
+            <button class="btn btn-block btn-danger">Logout</button>
+        </div>
+
+    </div>
+
+    <div class="col-xs-9 sections chatarea">
+
+        <div class="chat-messages">
+
+
+            <div class="chat-left row">
+
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+                <div class="chat-content col-xs-4">
+                    Hi
+                </div>
+
+            </div>
+
+            <div class="chat-right row">
+
+                <div class="chat-content col-xs-4 col-xs-offset-6">
+                    Hello asdsadasda asd as d as das dasd d as sd da sdas dsadd
+
+                </div>
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+
+            </div>
+
+
+            <div class="chat-left row">
+
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+                <div class="chat-content col-xs-4">
+                    Hi
+                </div>
+
+            </div>
+
+            <div class="chat-right row">
+
+                <div class="chat-content col-xs-4 col-xs-offset-6">
+                    Hello asdsadasda asd as d as das dasd d as sd da sdas dsadd
+
+                </div>
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+
+            </div>
+
+            <div class="chat-left row">
+
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+                <div class="chat-content col-xs-4">
+                    Hi
+                </div>
+
+            </div>
+
+            <div class="chat-right row">
+
+                <div class="chat-content col-xs-4 col-xs-offset-6">
+                    Hello asdsadasda asd as d as das dasd d as sd da sdas dsadd
+
+                </div>
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+
+            </div>
+
+            <div class="chat-left row">
+
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+                <div class="chat-content col-xs-4">
+                    Hi
+                </div>
+
+            </div>
+
+            <div class="chat-right row">
+
+                <div class="chat-content col-xs-4 col-xs-offset-6">
+                    Hello asdsadasda asd as d as das dasd d as sd da sdas dsadd
+
+                </div>
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+
+<div class="chat-input">
+
+    <textarea class="form-control"> </textarea>
+</div>
+
+
+<script>
+
+    var chatMessages = document.getElementsByClassName('chat-messages')[0];
+
+    var chatInput = document.getElementsByClassName('chat-input')[0];
+
+    console.log(chatMessages,chatInput)
+
+    chatMessages.style.height = (document.body.offsetHeight-chatInput.offsetHeight)+"px";
+
+    console.log(chatMessages.style.height);
+
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+</script>
+
+
+
+</body>
+</html>
