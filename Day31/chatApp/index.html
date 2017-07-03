@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Bootstrap</title>
+    <link rel="stylesheet" href="bootstrap.css">
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/firebase/firebase.js"></script>
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+    <script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDkwdeN_34VFyq7M7mKuHE7XFU1FJy5bls",
+    authDomain: "demochat-645b1.firebaseapp.com",
+    databaseURL: "https://demochat-645b1.firebaseio.com",
+    projectId: "demochat-645b1",
+    storageBucket: "",
+    messagingSenderId: "477714051041"
+  };
+  firebase.initializeApp(config);
+</script>
+    
+    <script src="app.js"></script>
+    <style>
+        div{
+            /*border :1px solid #ccc;*/
+
+        }
+        .sections{
+           padding:10px;
+        }
+        .left{
+            text-align:left;
+        }
+        .right{
+            text-align: right;
+        }
+        .customborder{
+            border-radius:10px;
+            /*box-shadow:-10px -10px 20px 2px;*/
+        }
+        .chatarea{
+            height:450px;
+            padding-top: 5px;
+        }
+        .userlist{
+            background: #CCC;
+        }
+        .center{
+            text-align:center;
+        }
+        .medium-font{
+            font-size:12px;
+            font-weight: bold;
+        }
+        .friend-list-div{
+            height:250px;
+            overflow:scroll;
+        }
+        .friend-list{
+        }
+        .dp{
+            max-width: 50%;
+        }
+        .auto{
+            margin: auto;
+        }
+        .chat-messages{
+            background: white;
+            overflow: scroll;
+        }
+        .chat-input{
+
+            position: absolute;
+            bottom: 0;
+            left:0;
+            width:75%;
+            margin-left:25%;
+            padding: 20px;
+            background: #999;
+
+        }
+        .chat-left{
+            text-align: left;
+        }
+
+        .chat-right{
+            text-align: right;
+            clear: both;
+
+
+        }
+        .chat-right .chat-content{
+             background: lightgreen;
+
+        }
+
+        .chat-left .chat-content{
+            background: orangered;
+            color:white;
+        }
+
+        .chat-content{
+            padding: 20px;
+            border-radius: 30px;
+            text-align: center;
+        }
+        .thumb{
+            width:50px;
+            border-radius: 50%;
+        }
+        .chat-left .user-chat-pic{
+            text-align: right;
+            padding: 0;
+        }
+        .chat-right .user-chat-pic{
+            text-align: left;
+            padding: 0;
+        }
+        .chat-gap{
+            margin-bottom:5px;
+        }
+    </style>
+</head>
+<body class="container" ng-app="chatApp">
+
+<div ng-controller="chatCtrl as chat">
+<div class="row" >
+    <div class="col-xs-3 sections userlist">
+        <div class="center">
+            <img class="dp customborder" src="avatar.jpeg">
+        </div>
+        <div class="sections center medium-font">
+            Abhishek Rathore
+            <input type="text" ng-model="chat.me">
+        </div>
+        <div class="friend-list-div">
+            <ul class="list-group friend-list">
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+                <li class="list-group-item">
+                    Mukul
+                </li>
+                <li class="list-group-item">
+                    Harsh
+                </li>
+            </ul>
+
+        </div>
+        <div class="center">
+            <button class="btn btn-block btn-danger">Logout</button>
+        </div>
+
+    </div>
+
+    <div class="col-xs-9 sections chatarea">
+
+        <div class="chat-messages">
+
+           <div ng-repeat="c in chat.chats" class="chat-gap">
+            <div class="chat-left row" ng-if="chat.me!=c.user">
+
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+                <div class="chat-content col-xs-4">
+                    {{c.text}}
+                </div>
+
+            </div>
+
+            <div class="chat-right row" ng-if="chat.me==c.user">
+
+                <div class="chat-content col-xs-4 col-xs-offset-6">
+                   {{c.text}}
+                </div>
+                <div class="user-chat-pic col-xs-2">
+                    <img class="thumb" src="avatar.jpeg">
+                </div>
+
+            </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+    </div>
+
+</div>
+
+
+<div class="chat-input">
+    <textarea class="form-control" ng-model="chat.input" ng-keypress="chat.input && $event.keyCode==13 && chat.add(chat.input)"> </textarea>
+</div>
+</div>
+
+
+<script>
+
+    var chatMessages = document.getElementsByClassName('chat-messages')[0];
+
+    var chatInput = document.getElementsByClassName('chat-input')[0];
+
+    console.log(chatMessages,chatInput)
+
+    chatMessages.style.height = (document.body.offsetHeight-chatInput.offsetHeight)+"px";
+
+    console.log(chatMessages.style.height);
+
+
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+
+</script>
+
+
+
+</body>
+</html>
