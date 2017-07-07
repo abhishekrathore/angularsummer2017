@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <script src="angular.js"></script>
+        <script src="app.js"></script>
+        <style>
+        popover{
+           padding : 10px;
+           background: yellow;
+           width: 50%;
+        }
+         .popover-active{
+           border-radius:30px;
+           border:1px solid black;
+        }
+
+        popover{
+            display:block;
+        }
+        
+        </style>
+
+    </head>
+    <body ng-app="firstApp">
+   
+   <div ng-controller="demoCtrl as demo"> 
+     Name : {{name}}
+     demoText : {{demo.text}}
+     <msg>
+     <popover  text="hello" my-name="name" my-color="blue">
+    
+     </popover>
+     </msg>
+
+
+
+     <!--<popover text="hi" my-color="green"></popover>-->
+     <!--<popover text="abc"></popover>
+     <div popover text="abc"></div>-->
+
+   </div>
+
+
+
+    </body>
+</html>
